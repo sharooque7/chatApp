@@ -47,7 +47,9 @@ const Messenger = () => {
   ///socket
   useEffect(() => {
     // socket.current = io("ws://localhost:8000");
-    socket.current = io("wss://chatsocialapp.herokuapp.com/");
+    socket.current = io("wss://chatsocialapp.herokuapp.com/", {
+      transports: ["websocket", "polling", "flashsocket"],
+    });
     socket.current.on("getMessage", (data) => {
       setArrivalMessage({
         sender: data.senderId,
