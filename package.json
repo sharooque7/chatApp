@@ -38,7 +38,7 @@
     ]
   },
   "proxyMain": "http://localhost:5000",
-  "proxy": "https://chatappsocial.herokuapp.com/",
+  "proxy": "https://chatappsocial.herokuapp.com",
   "browserslist": {
     "production": [
       ">0.2%",
