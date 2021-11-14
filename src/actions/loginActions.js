@@ -20,7 +20,7 @@ export const login = (email, password) => async (dispatch) => {
     const { data } = await axios({
       method: "POSt",
       // url: "http://localhost:5000/api/users/login",
-      url: "/api/users/login",
+      url: "https://chatappsocial.herokuapp.com/api/users/login",
       data: { email, password },
       config,
     });

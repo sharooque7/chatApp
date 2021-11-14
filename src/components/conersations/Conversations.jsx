@@ -3,6 +3,7 @@ import "./Conversation.css";
 import Logo from "./logo512.png";
 import axios from "axios";
 import { useSelector } from "react-redux";
+import { CircularProgress } from "@mui/material";
 
 const Conversations = ({ conversation, currentUser }) => {
   const userLogin = useSelector((state) => state.userLogin);
@@ -21,7 +22,7 @@ const Conversations = ({ conversation, currentUser }) => {
         const res = await axios({
           method: "GET",
           // url: `http://localhost:5000/api/users/all`,
-          url: `/api/users/all`,
+          url: `https://chatappsocial.herokuapp.com/api/users/all`,
           headers: {
             Authorization: "Bearer " + token,
             "Content-Type": "application/json",
@@ -46,7 +47,9 @@ const Conversations = ({ conversation, currentUser }) => {
   return (
     <div className="conversation">
       <img className="conversationImg" src={Logo} alt="" />
-      <span className="conversationName">{name[0]?.username}</span>
+      <span className="conversationName">
+        {name.length <= 0 ? <CircularProgress /> : name[0]?.username}
+      </span>
     </div>
   );
 };

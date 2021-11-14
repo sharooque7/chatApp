@@ -19,7 +19,7 @@ export const Signup = (username, email, password) => async (dispatch) => {
     };
     const { data } = await axios.post(
       // "http://localhost:5000/api/users/register",
-      "/api/users/register",
+      "https://chatappsocial.herokuapp.com/api/users/register",
       { username, email, password },
       config
     );

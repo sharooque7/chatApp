@@ -22,7 +22,7 @@ const ChatOnline = ({ onlineUsers, setOn, currentUser, setCurrentChat }) => {
         const res = await axios({
           method: "GET",
           // url: "http://localhost:5000/api/users/all",
-          url: "/api/users/all",
+          url: "https://chatappsocial.herokuapp.com/api/users/all",
           headers: {
             Authorization: "Bearer " + token,
           },
@@ -57,7 +57,7 @@ const ChatOnline = ({ onlineUsers, setOn, currentUser, setCurrentChat }) => {
       const con = await axios({
         method: "GET",
         // url: `http://localhost:5000/api/conversation/${userId}`,
-        url: `/api/conversation/${userId}`,
+        url: `https://chatappsocial.herokuapp.com/api/conversation/${userId}`,
         headers: {
           Authorization: "Bearer " + token,
         },
@@ -76,7 +76,7 @@ const ChatOnline = ({ onlineUsers, setOn, currentUser, setCurrentChat }) => {
         const data = await axios({
           method: "POST",
           // url: "http://localhost:5000/api/conversation",
-          url: "/api/conversation",
+          url: "https://chatappsocial.herokuapp.com/api/conversation",
           data: {
             senderId: userId,
             receiverId: user._id,
@@ -97,7 +97,7 @@ const ChatOnline = ({ onlineUsers, setOn, currentUser, setCurrentChat }) => {
       const res = await axios({
         method: "POST",
         // url: `http://localhost:5000/api/conversation/find/${userId}/${user._id}`,
-        url: `/api/conversation/find/${userId}/${user._id}`,
+        url: `https://chatappsocial.herokuapp.com/api/conversation/find/${userId}/${user._id}`,
         headers: {
           Authorization: "Bearer " + token,
         },

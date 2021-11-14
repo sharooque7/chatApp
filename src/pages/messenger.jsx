@@ -82,7 +82,7 @@ const Messenger = () => {
         const res = await axios({
           method: "GET",
           // url: `http://localhost:5000/api/conversation/${userId}`,
-          url: `/api/conversation/${userId}`,
+          url: `https://chatappsocial.herokuapp.com/api/conversation/${userId}`,
           headers: {
             Authorization: "Bearer " + token,
           },
@@ -104,7 +104,7 @@ const Messenger = () => {
         const res = await axios({
           method: "GET",
           // url: `http://localhost:5000/api/message/${currentChat?._id}`,
-          url: `/api/message/${currentChat?._id}`,
+          url: `https://chatappsocial.herokuapp.com/api/message/${currentChat?._id}`,
           headers: {
             Authorization: "Bearer " + token,
           },
@@ -149,7 +149,7 @@ const Messenger = () => {
       const res = await axios({
         method: "POST",
         // url: `http://localhost:5000/api/message/`,
-        url: `/api/message/`,
+        url: `https://chatappsocial.herokuapp.com/api/message/`,
         data: message,
         headers: {
           Authorization: "Bearer " + token,
