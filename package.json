@@ -38,6 +38,11 @@
       "react-app/jest"
     ]
   },
+<<<<<<< HEAD
+=======
+  "proxyMain": "http://localhost:5000",
+  "proxy": "https://chatappsocial.herokuapp.com",
+>>>>>>> 72dd07027da9ca18c36262e421ad981a5fa10f3d
   "browserslist": {
     "production": [
       ">0.2%",
