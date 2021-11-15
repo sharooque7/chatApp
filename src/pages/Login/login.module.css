@@ -70,3 +70,12 @@
     left: 20px;
   }
 }
+.sample {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  margin-bottom: 10px;
+}
+.sample > span {
+  margin-bottom: 10px;
+}

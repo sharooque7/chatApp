@@ -96,7 +96,7 @@ const Messenger = () => {
       }
     };
     getConvrsation();
-  }, [userId, userInfo]);
+  }, [userId]);
 
   //getMessage
   useEffect(() => {

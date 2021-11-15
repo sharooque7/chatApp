@@ -36,7 +36,7 @@ const Conversations = ({ conversation, currentUser }) => {
       }
     };
     getuser();
-  }, [currentUser, conversation, userId, userInfo]);
+  }, [conversation, userId]);
   // console.log(user.filter);
   // console.log(conversation.members.filter((p) => p !== userId));
   const a = conversation.members.filter((p) => p !== userId);
@@ -48,7 +48,8 @@ const Conversations = ({ conversation, currentUser }) => {
     <div className="conversation">
       <img className="conversationImg" src={Logo} alt="" />
       <span className="conversationName">
-        {name.length <= 0 ? <CircularProgress /> : name[0]?.username}
+        {/* {name.length <= 0 ? <CircularProgress /> : name[0]?.username} */}
+        {name[0]?.username}
       </span>
     </div>
   );

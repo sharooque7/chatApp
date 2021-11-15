@@ -25,6 +25,10 @@ export const Signup = (username, email, password) => async (dispatch) => {
     );
     console.log(data);
     dispatch({ type: USER_SIGNUP_SUCCESS });
+
+    setTimeout(() => {
+      dispatch({ type: "USER_SIGN" });
+    }, 5000);
   } catch (error) {
     dispatch({ type: USER_SIGNUP_FAILED });
   }

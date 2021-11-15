@@ -15,6 +15,9 @@ export const signupReducer = (state = {}, action) => {
     case USER_SIGNUP_SUCCESS:
       return { loading: false, signup: true };
 
+    case "USER_SIGN": {
+      return { loading: false, signup: false };
+    }
     case USER_SIGNUP_FAILED: {
       return { loading: false, signup: false };
     }

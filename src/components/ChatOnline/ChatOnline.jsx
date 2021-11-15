@@ -113,7 +113,10 @@ const ChatOnline = ({ onlineUsers, setOn, currentUser, setCurrentChat }) => {
   return (
     <>
       <div className="chatOnline">
-        Online Users
+        Online Users :<br />{" "}
+        {friends.length <= 0
+          ? "No Online user at the moment . Login with sample cred / wait for user to come online"
+          : ""}
         {friends.map((m) => (
           <div
             className="chatonlineFriend"

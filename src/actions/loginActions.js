@@ -39,6 +39,10 @@ export const login = (email, password) => async (dispatch) => {
           ? error.response.data.message
           : error.message,
     });
+
+    setTimeout(() => {
+      dispatch({ type: "USER_ERROR" });
+    }, 5000);
   }
 };
 
@@ -47,4 +51,8 @@ export const logout = () => (dispatch) => {
   localStorage.removeItem("expiryDate");
 
   dispatch({ type: USER_LOGOUT_REQUEST });
+
+  setTimeout(() => {
+    dispatch({ type: "USER_LOGOUT" });
+  }, 5000);
 };

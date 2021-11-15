@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import style from "./login.module.css";
 import Particles from "react-tsparticles";
 import data from "./data";
@@ -45,6 +45,12 @@ const Login = () => {
           </div>
           <div className={style.login__right}>
             {" "}
+            <div className={style.sample}>
+              <span> Sample Credentials</span>
+              <span>ozil@gmail Arsenal</span>
+              <span>sha@gmail Drone111</span>
+              <span>luka@gmail Madrid10</span>
+            </div>
             <form onSubmit={handleSubmit}>
               {" "}
               <div className={style.login__input}>
@@ -59,9 +65,27 @@ const Login = () => {
                 <button disabled={loading} type="submit">
                   Login
                 </button>
-                {error ? <p>Something went wrong</p> : ""}
-                {expire ? <p>Session Expired! please login</p> : ""}
-                {signup ? <p>Registered Successfully! please login</p> : ""}
+                {error ? (
+                  <p style={{ color: "red" }}>
+                    Something went wrong ! Please check the credentials
+                  </p>
+                ) : (
+                  ""
+                )}
+                {expire ? (
+                  <p style={{ color: "red" }}>
+                    Session Expired! / Ended! please login
+                  </p>
+                ) : (
+                  ""
+                )}
+                {signup ? (
+                  <p style={{ color: "green" }}>
+                    Registered Successfully! please login
+                  </p>
+                ) : (
+                  ""
+                )}
                 <Link to="/signup">
                   <button disabled={loading} className={style.btn}>
                     Sign Up

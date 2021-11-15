@@ -20,11 +20,19 @@ export const userLoginReducer = (state = {}, action) => {
       };
 
     case USER_LOGIN_FAIL:
-      return { loading: false, success: false, error: action.payload };
+      return { loading: false, success: false, error: true };
+
+    case "USER_ERROR":
+      return { error: false };
 
     case USER_LOGOUT_REQUEST:
       return {
         expire: true,
+      };
+
+    case "USER_LOGOUT":
+      return {
+        expire: false,
       };
 
     default:
