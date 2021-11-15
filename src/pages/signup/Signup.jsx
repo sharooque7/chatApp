@@ -16,7 +16,7 @@ const SignIn = () => {
   const confirmPassword = useRef();
   const sign = useSelector((state) => state.signup);
   const { loading } = sign;
-  console.log(loading);
+  //console.log(loading);
   const dispatch = useDispatch();
   const [error, setError] = useState(false);
   const handleSubmit = async (e) => {
@@ -32,13 +32,13 @@ const SignIn = () => {
           )
         );
         navigate("/");
-        console.log("Hi");
+        //console.log("Hi");
       } else {
         throw new Error("Password doesn't match");
       }
-      console.log(loading);
+      //console.log(loading);
     } catch (error) {
-      console.log(error);
+      //console.log(error);
       setError(true);
       setTimeout(() => {
         setError(false);

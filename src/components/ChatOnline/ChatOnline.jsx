@@ -11,7 +11,7 @@ const ChatOnline = ({ onlineUsers, setOn, currentUser, setCurrentChat }) => {
   const userId = userInfo ? userInfo["user"]._id : null;
   const [friends, setFriends] = useState([]);
   const [found, setfound] = useState(false);
-  //console.log(userInfo["user"]._id);
+  ////console.log(userInfo["user"]._id);
 
   useEffect(() => {
     const getAll = async () => {
@@ -27,7 +27,7 @@ const ChatOnline = ({ onlineUsers, setOn, currentUser, setCurrentChat }) => {
             Authorization: "Bearer " + token,
           },
         });
-        // console.log(onlineUsers);
+        // //console.log(onlineUsers);
         setFriends(
           res.data.filter((p) => {
             for (var i = 0; i < onlineUsers.length; i++) {
@@ -37,22 +37,22 @@ const ChatOnline = ({ onlineUsers, setOn, currentUser, setCurrentChat }) => {
             }
           })
         );
-        console.log(res.data);
+        //console.log(res.data);
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     };
     getAll();
   }, [userId, userInfo, onlineUsers]);
-  console.log(currentUser);
-  // console.log(onlineUsers[0]["userId"]);
+  //console.log(currentUser);
+  // //console.log(onlineUsers[0]["userId"]);
 
   const handleClick = async (user) => {
     const token = userInfo
       ? JSON.parse(localStorage.getItem("userInfo")).token
       : null;
-    console.log(userId);
-    console.log(user._id);
+    //console.log(userId);
+    //console.log(user._id);
     try {
       const con = await axios({
         method: "GET",
@@ -62,16 +62,16 @@ const ChatOnline = ({ onlineUsers, setOn, currentUser, setCurrentChat }) => {
           Authorization: "Bearer " + token,
         },
       });
-      console.log(con);
-      console.log(con.data);
+      //console.log(con);
+      //console.log(con.data);
 
       const dup = con.data.findIndex((p) => {
         if (p["members"].includes(userId) && p["members"].includes(user._id)) {
           return p;
         }
       });
-      console.log(dup);
-      console.log(dup >= 0);
+      //console.log(dup);
+      //console.log(dup >= 0);
       if (dup < 0) {
         const data = await axios({
           method: "POST",
@@ -86,7 +86,7 @@ const ChatOnline = ({ onlineUsers, setOn, currentUser, setCurrentChat }) => {
             Authorization: "Bearer " + token,
           },
         });
-        console.log(data);
+        //console.log(data);
       } else {
         setfound(true);
         setTimeout(() => {
@@ -102,11 +102,11 @@ const ChatOnline = ({ onlineUsers, setOn, currentUser, setCurrentChat }) => {
           Authorization: "Bearer " + token,
         },
       });
-      console.log(res);
+      //console.log(res);
       setCurrentChat(res.data);
       setOn(true);
     } catch (err) {
-      console.log(err);
+      //console.log(err);
     }
   };
 

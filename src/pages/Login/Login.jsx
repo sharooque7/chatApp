@@ -16,7 +16,7 @@ const Login = () => {
   const dispatch = useDispatch();
   const userLogin = useSelector((state) => state.userLogin);
   const sign = useSelector((state) => state.signup);
-  console.log(userLogin);
+  //console.log(userLogin);
 
   const { loading, error, expire, success } = userLogin;
   const { signup } = sign;
@@ -24,12 +24,12 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await dispatch(login(email.current.value, password.current.value));
-    console.log(error);
+    //console.log(error);
   };
-  //   console.log(userLogin);
+  //   //console.log(userLogin);
   //   if (success) {
   //     navigate("/messenger");
-  //     console.log("Hi");
+  //     //console.log("Hi");
   //   }
 
   const Component = () => {

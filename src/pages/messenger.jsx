@@ -15,7 +15,7 @@ const Messenger = () => {
   const userLogin = useSelector((state) => state.userLogin);
   const { userInfo } = userLogin;
   const dispatch = useDispatch();
-  //console.log(userInfo._id);
+  ////console.log(userInfo._id);
   const userId = userInfo ? userInfo["user"]?._id : userInfo;
   const username = userInfo ? userInfo["user"]?.username : userInfo;
   const [conversation, setConversation] = useState([]);
@@ -25,7 +25,7 @@ const Messenger = () => {
   const [newMessage, setnewMessage] = useState("");
   const [on, setOn] = useState(false);
 
-  console.log(newMessage);
+  //console.log(newMessage);
 
   const [arrivalMessage, setArrivalMessage] = useState(null);
   const [onlineUsers, setOnlineUsers] = useState([]);
@@ -70,7 +70,7 @@ const Messenger = () => {
     socket.current.emit("addUser", userId);
     socket.current.on("getUsers", (users) => {
       setOnlineUsers(users);
-      console.log(users);
+      //console.log(users);
     });
   }, [userId]);
 
@@ -89,10 +89,10 @@ const Messenger = () => {
             Authorization: "Bearer " + token,
           },
         });
-        console.log(res);
+        //console.log(res);
         setConversation(res.data);
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     };
     getConvrsation();
@@ -111,10 +111,10 @@ const Messenger = () => {
             Authorization: "Bearer " + token,
           },
         });
-        console.log(res.data);
+        //console.log(res.data);
         setMessages(res.data);
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     };
     getMessages();
@@ -134,7 +134,7 @@ const Messenger = () => {
       conversationId: currentChat._id,
     };
 
-    console.log(currentChat);
+    //console.log(currentChat);
     const receiverId = currentChat?.members.find((m) => m !== userId);
 
     //socket
@@ -160,12 +160,12 @@ const Messenger = () => {
       setMessages([...messages, res.data]);
       setnewMessage("");
     } catch (error) {
-      console.log(error);
+      //console.log(error);
     }
   };
 
   const hanldeClick = () => {
-    console.log("Hi");
+    //console.log("Hi");
     dispatch(logout());
 
     navigate("/");
@@ -173,9 +173,9 @@ const Messenger = () => {
 
   const handleChat = (c) => {
     setCurrentChat(c);
-    console.log(c);
+    //console.log(c);
     const arr = c.members.filter((p) => p !== userId);
-    console.log(arr);
+    //console.log(arr);
     for (var i = 0; i < onlineUsers.length; i++) {
       if (arr.includes(onlineUsers[i]["userId"])) {
         setOn(true);
@@ -184,7 +184,7 @@ const Messenger = () => {
         setOn(false);
       }
     }
-    console.log(onlineUsers);
+    //console.log(onlineUsers);
   };
 
   const Component = () => {
@@ -282,7 +282,7 @@ const Messenger = () => {
     );
   };
 
-  console.log(messages);
+  //console.log(messages);
   return (
     <>
       <Component />

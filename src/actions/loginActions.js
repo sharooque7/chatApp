@@ -19,7 +19,7 @@ export const login = (email, password) => async (dispatch) => {
     };
     const { data } = await axios({
       method: "POSt",
-      // url: "http://localhost:5000/api/users/login",
+
       url: "https://chatappsocial.herokuapp.com/api/users/login",
       data: { email, password },
       config,
@@ -31,7 +31,6 @@ export const login = (email, password) => async (dispatch) => {
     const expiryDate = new Date(new Date().getTime() + remainingMilliseconds);
     localStorage.setItem("expiryDate", expiryDate.toISOString());
   } catch (error) {
-    console.log(error);
     dispatch({
       type: USER_LOGIN_FAIL,
       payload:

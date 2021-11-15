@@ -7,11 +7,11 @@ import {
 
 export const Signup = (username, email, password) => async (dispatch) => {
   try {
-    console.log(username, email, password);
+    //console.log(username, email, password);
     dispatch({
       type: USER_SIGNUP_REQUEST,
     });
-    console.log("dispatch1");
+    //console.log("dispatch1");
     const config = {
       headers: {
         "Content-Type": "application/json",
@@ -23,7 +23,7 @@ export const Signup = (username, email, password) => async (dispatch) => {
       { username, email, password },
       config
     );
-    console.log(data);
+    //console.log(data);
     dispatch({ type: USER_SIGNUP_SUCCESS });
 
     setTimeout(() => {

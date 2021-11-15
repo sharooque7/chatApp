@@ -16,7 +16,7 @@ const Test = () => {
       },
     });
 
-    console.log(res);
+    //console.log(res);
   };
   return (
     <div>

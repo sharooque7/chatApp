@@ -10,8 +10,8 @@ const Conversations = ({ conversation, currentUser }) => {
   const { userInfo } = userLogin;
   let userId = userInfo ? userInfo["user"]._id : null;
   const [user, setUser] = useState([]);
-  console.log(currentUser);
-  console.log(conversation.members);
+  //console.log(currentUser);
+  //console.log(conversation.members);
   useEffect(() => {
     //   const friendId = conversation.members.find((m) => m !== currentUser);
     const getuser = async () => {
@@ -28,22 +28,22 @@ const Conversations = ({ conversation, currentUser }) => {
             "Content-Type": "application/json",
           },
         });
-        console.log(res.data);
+        //console.log(res.data);
         setUser(res.data.filter((a) => a._id !== userId));
-        console.log(res.data.filter((a) => a._id === userId)[0].username);
+        //console.log(res.data.filter((a) => a._id === userId)[0].username);
       } catch (error) {
-        console.log(error);
+        //console.log(error);
       }
     };
     getuser();
   }, [conversation, userId]);
-  // console.log(user.filter);
-  // console.log(conversation.members.filter((p) => p !== userId));
+  // //console.log(user.filter);
+  // //console.log(conversation.members.filter((p) => p !== userId));
   const a = conversation.members.filter((p) => p !== userId);
-  // console.log(a);
-  // console.log(user.filter((p) => p._id === a[0]));
+  // //console.log(a);
+  // //console.log(user.filter((p) => p._id === a[0]));
   const name = user.filter((p) => p._id === a[0]);
-  console.log(name);
+  //console.log(name);
   return (
     <div className="conversation">
       <img className="conversationImg" src={Logo} alt="" />
