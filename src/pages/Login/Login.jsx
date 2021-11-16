@@ -47,9 +47,9 @@ const Login = () => {
             {" "}
             <div className={style.sample}>
               <span> Sample Credentials</span>
-              <span>ozil@gmail Arsenal</span>
-              <span>sha@gmail Drone111</span>
-              <span>luka@gmail Madrid10</span>
+              <span>ozil@gmail.com Arsenal</span>
+              <span>sha@gmail.com Drone111</span>
+              <span>luka@gmail.com Madrid10</span>
             </div>
             <form onSubmit={handleSubmit}>
               {" "}
