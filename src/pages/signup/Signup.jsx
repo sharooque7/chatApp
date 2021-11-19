@@ -74,7 +74,7 @@ const SignIn = () => {
               </button>
               {error && <span>Something went wrong please try again</span>}
               {loading ? <CircularProgress /> : null}
-              <Link to="/login">
+              <Link to="/">
                 {" "}
                 <button className={style.btn}>Login</button>
               </Link>
